@@ -1,0 +1,125 @@
+class Bunga {
+  int Kesegaran = 70;
+  String nama = "";
+
+  void printKesegaran () {
+    System.out.println("Kesegaran bunga " 
+      + this.nama 
+      + " = " 
+      + this.kesegaran
+      + " %"
+    );
+  }
+}
+
+class Melati extends Bunga {
+  Melati() {
+    this.nama = "Melati";
+  }
+}
+
+class Anggrek extends Bunga {
+  Anggrek() {
+    this.nama = "Anggrek";
+  }
+}
+
+class Mawar extends Bunga {
+  Mawar() {
+    this.nama = "Mawar";
+  }
+}
+
+class Rose extends Bunga {
+  Rose() {
+    this.nama = "Rose";
+  }
+}
+
+class GrupBunga {
+  Melati Melati = new Melati();
+ Anggrek Anggrek = new Anggrek();
+ Mawar Mawar = new Mawar();
+  Rose Rose = new Rose();
+
+  void printInfo() {
+    this.melati.printKesegaran();
+    this.anggrek.printKesegaran();
+    this.mawar.printKesegaran();
+    this.rose.printKesegaran();
+  }
+}
+
+class Tanaman {
+  String nama = "";
+  int untukMelati = 0;
+  int untukAnggrek = 0;
+  int untukMawar = 0;
+  int untukRose= 0;
+  void menyegarkan(Manusia manusia) {
+    manusia.bunga.melati.kesegaran += this.untukMelati;
+    manusia.bunga.anggrek.kesegaran += this.untukAnggrek;
+    manusia.bunga.mawar.kesegaran += this.untukMawar;
+    manusia.bunga.rose.kesegaran += this.untukRose;
+  }
+}
+
+class Siram extends Tanaman {
+  Siram () {
+    this.nama = "Siram";
+    this.untukMelati = 0;
+    this.untukAnggrek = -2;
+    this.untukMawar = 0;
+    this.untukRose = 1;
+  }
+}
+
+class Rawat extends Tanaman {
+  Rawat () {
+    this.nama = "Rawat";
+    this.untukMelati = 2;
+    this.untukAnggrek = 1;
+    this.untukMawar = 1;
+    this.untukRose = 1;
+  }
+}
+
+class Manusia {
+  GrupBunga bunga = new GrupBunga();
+  String nama;
+
+  void tanam(Tanaman tanaman) {
+    System.out.println(this.nama + "tanam " + tanaman.nama);
+    tanaman.menyegarkan(this); 
+    this.printInfo();
+  }
+
+  void printInfo() {
+    System.out.println("Nama nya " + this.nama);
+    this.Bunga.printInfo();
+  }
+}
+
+class Mahasiswa extends Manusia {
+}
+
+public class SimulasiManusia {
+
+  public static void main(String[] argumen) {
+    
+    Mahasiswa mahasiswa1 = new Mahasiswa();
+    mahasiswa1.nama = "Rikzan";
+    mahasiswa1.printInfo();
+
+    Jajan Cimo1 = new Cimol();
+    mahasiswa1.makan(cimol1);
+
+    Bayaran Bilor1 = new Bilor();
+    mahasiswa1.bayar(bilor1);
+    mahasiswa1.bayar(bilor1);
+    mahasiswa1.bayar(bilor1);
+    mahasiswa1.bayar(bilor1);
+    mahasiswa1.bayar(bilor1);
+    mahasiswa1.bayar(bilor1);
+  }
+}
